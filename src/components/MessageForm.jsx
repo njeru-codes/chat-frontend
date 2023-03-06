@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { SendOutlined, PictureOutlined } from '@ant-design/icons';
 import { sendMessage, isTyping } from 'react-chat-engine';
+// import axios from 'axios';
 
 const MessageForm = (props) => {
   const [value, setValue] = useState('');
@@ -11,6 +12,16 @@ const MessageForm = (props) => {
 
     isTyping(props, chatId);
   };
+
+  /*
+  const profanityCheck = async (text) => {
+    const response = await axios.post('https://lavendarprofanity-check.onrender.com', {
+      headers: { 'Content-Type': 'application/json' },
+      data: { text: text },
+    });
+    const data = await response.data;
+    return data.profanity;
+  }; */
 
   const handleSubmit = (event) => {
     event.preventDefault();
